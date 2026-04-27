@@ -33,7 +33,7 @@ export function Navbar() {
           />
           root@portfolio:~/
         </span>
-        <span className="text-[#0f0]/40">
+        <span className="text-white">
           {pathname === '/' ? 'home' : pathname.replace('/', '')}
         </span>
       </div>
@@ -49,7 +49,7 @@ export function Navbar() {
               className={`group relative transition-all duration-300 py-1 ${
                 active
                   ? 'text-[#0f0] cyber-glow-text'
-                  : 'text-[#0f0]/30 hover:text-[#0f0]'
+                  : 'text-gray-500 hover:text-[#0f0]'
               }`}
             >
               ./{item.name}

@@ -92,8 +92,10 @@ export default function AboutPage() {
           {/* Metadata Bar (Centered & Minimal) */}
           <div className="mt-8 flex flex-wrap justify-center gap-6 font-mono text-[10px] uppercase opacity-60 tracking-[0.2em]">
             <span className="text-white">[ID: 0xRaymond]</span>
-            <span className="text-[#0f0]">[STATUS: ACTIVE]</span>
-            <span className="text-white">[ROLE: DEV & SEC]</span>
+            <span className="text-[#0f0] animate-pulse font-bold">
+              [STATUS: ACTIVE]
+            </span>
+            <span className="text-white">[ROLE: STUDENT]</span>
           </div>
         </motion.div>
 

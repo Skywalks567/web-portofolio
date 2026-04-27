@@ -27,7 +27,6 @@ const MatrixBackground: React.FC = () => {
     }
 
     const draw = () => {
-      // Slightly transparent black background to create trail effect
       ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
       ctx.fillRect(0, 0, width, height);
 
@@ -70,7 +69,7 @@ const MatrixBackground: React.FC = () => {
   return (
     <canvas
       ref={canvasRef}
-      className="fixed inset-0 z-[-1] pointer-events-none opacity-[0.15]"
+      className="fixed inset-0 z-[-1] pointer-events-none opacity-[0.25]"
       style={{ filter: 'blur(0.5px)' }}
     />
   );
