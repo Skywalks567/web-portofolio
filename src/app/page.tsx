@@ -107,7 +107,7 @@ export default function Home() {
             </span>
             whoami
             <br />
-            <span className="text-white mt-2 inline-block">
+            <span className="text-white mt-2 inline-block align-content-center">
               {"I'm"} Raymond. Passionate about exploring the ever-evolving
               world of technology, particularly in cybersecurity and software
               development.
@@ -120,10 +120,12 @@ export default function Home() {
           className="flex flex-wrap justify-center gap-6 pt-4"
         >
           <Link
-            href="/cv.pdf"
+            href="/resume/resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
             className="px-8 py-3 border border-[#0f0] text-[#0f0] hover:bg-[#0f0] hover:text-black transition-all duration-300 font-bold uppercase tracking-widest text-sm"
           >
-            Download_CV
+            View_Resume
           </Link>
           <Link
             href="/contact"
