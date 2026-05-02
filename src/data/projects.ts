@@ -21,7 +21,7 @@ export const projects: Project[] = [
       'A cli tools and library for hash detection and cracking known hash value with smart wordlist generator.',
     tags: ['Python', 'Click', 'Hash Cracking'],
     image: '/projects/Pyfend.png',
-    link: 'https://github.com/Skywalks567/pyfend',
+    link: 'https://github.com/PyFend/PyFend',
   },
   {
     title: 'NutriScale',
