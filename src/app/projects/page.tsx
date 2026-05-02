@@ -94,7 +94,6 @@ export default function ProjectsPage() {
         animate="visible"
         className="max-w-6xl mx-auto relative z-10 flex flex-col items-start w-full"
       >
-        {/* Header: $ ls ./projects */}
         <motion.div variants={itemVariants} className="mb-16 w-full space-y-6">
           <div className="flex items-center gap-3 pt-8">
             <span className="text-xl md:text-2xl text-white font-medium">
@@ -113,7 +112,6 @@ export default function ProjectsPage() {
               className="w-2.5 h-6 bg-[#0f0]"
             />
           </div>
-          {/* Decorative Line */}
           <div className="w-full h-[1px] bg-white/10" />
         </motion.div>
 
@@ -124,7 +122,6 @@ export default function ProjectsPage() {
               variants={itemVariants}
               className="glass-card group bg-white/[0.02] backdrop-blur-md border border-white/10 hover:border-[#0f0]/30 rounded-none transition-all duration-500 flex flex-col"
             >
-              {/* Image Container */}
               <div className="relative w-full aspect-video overflow-hidden border-b border-white/10">
                 <Image
                   src={project.image}
@@ -134,7 +131,6 @@ export default function ProjectsPage() {
                 />
               </div>
 
-              {/* Content Wrapper */}
               <div className="p-6 flex flex-col flex-1">
                 <h2 className="text-lg font-bold text-white group-hover:text-[#0f0] transition-colors duration-300 mb-4 tracking-tight">
                   {project.title}

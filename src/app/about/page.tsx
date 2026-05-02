@@ -25,7 +25,6 @@ export default function AboutPage() {
 
   return (
     <div className="min-h-screen bg-transparent font-mono text-[#0f0] p-6 md:p-12 lg:p-20 relative overflow-hidden">
-      {/* Radial Glows */}
       <div className="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] bg-[#0f0]/5 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute bottom-[-10%] right-[-10%] w-[500px] h-[500px] bg-[#0f0]/5 rounded-full blur-[120px] pointer-events-none" />
 
@@ -35,7 +34,6 @@ export default function AboutPage() {
         animate="visible"
         className="max-w-5xl mx-auto relative z-10 flex flex-col items-start"
       >
-        {/* Header: $ cat about.me */}
         <motion.div variants={itemVariants} className="mb-16 w-full space-y-6">
           <div className="flex items-center gap-3 pt-8">
             <span className="text-xl md:text-2xl text-white font-medium">
@@ -54,17 +52,14 @@ export default function AboutPage() {
               className="w-2.5 h-6 bg-[#0f0]"
             />
           </div>
-          {/* Decorative Line */}
           <div className="w-full h-[1px] bg-white/10" />
         </motion.div>
 
-        {/* CENTERED PROFILE SECTION */}
         <motion.div
           variants={itemVariants}
           className="flex flex-col items-center mb-16 w-full"
         >
           <div className="relative group p-4">
-            {/* HUD Spinner (Always Visible) */}
             <div className="absolute inset-0 border-2 border-[#0f0]/10 rounded-full z-20 pointer-events-none" />
             <div
               className="absolute inset-0 border-2 border-t-[#0f0] border-transparent rounded-full animate-spin z-30 pointer-events-none"
@@ -85,11 +80,9 @@ export default function AboutPage() {
               />
             </div>
 
-            {/* Subtle glow behind photo */}
             <div className="absolute inset-4 bg-[#0f0] rounded-full opacity-5 group-hover:opacity-15 blur-2xl transition-opacity duration-700 pointer-events-none" />
           </div>
 
-          {/* Metadata Bar (Centered & Minimal) */}
           <div className="mt-8 flex flex-wrap justify-center gap-6 font-mono text-[10px] uppercase opacity-60 tracking-[0.2em]">
             <span className="text-white">[ID: 0xRaymond]</span>
             <span className="text-[#0f0] animate-pulse font-bold">
@@ -99,7 +92,6 @@ export default function AboutPage() {
           </div>
         </motion.div>
 
-        {/* STACKED CONTENT SECTIONS */}
         <div className="w-full space-y-12">
           {/* 01. Biographical Summary */}
           <motion.section variants={itemVariants} className="space-y-4">
