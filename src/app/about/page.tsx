@@ -77,7 +77,7 @@ export default function AboutPage() {
 
             <div className="relative w-48 h-48 md:w-64 md:h-64 lg:w-72 lg:h-72 rounded-full overflow-hidden border-2 border-[#0f0]/20 z-10">
               <Image
-                src="/profile.png"
+                src="/about/profile.png"
                 alt="Profile"
                 fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
