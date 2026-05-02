@@ -117,7 +117,7 @@ export default function Home() {
             variants={itemVariants}
             className="text-[#0f0]/60 text-sm md:text-base mb-4 tracking-[0.2em] min-w-[300px]"
           >
-            [SYSTEM_READY] INITIALIZING_PORTFOLIO{'.'.repeat(dotCount)}
+            [SYSTEM_READY] INITIALIZING_PORTOFOLIO{'.'.repeat(dotCount)}
           </motion.p>
 
           <div className="relative">
@@ -168,7 +168,9 @@ export default function Home() {
           <div className="text-left space-y-6">
             <div className="w-full border-b border-[#0f0]/30 pb-2 flex items-center justify-between">
               <div>
-                <span className="text-[#0f0] font-bold">root@portfolio:~$</span>{' '}
+                <span className="text-[#0f0] font-bold">
+                  root@portofolio:~$
+                </span>{' '}
                 <span className="text-white">whoami</span>
               </div>
               <div className="flex gap-1">

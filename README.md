@@ -1,6 +1,6 @@
-## Hi,Welcome to My Website Portfolio!
+## Hi,Welcome to My Website Portofolio!
 
-This is a simple website portfolio created using Next.js.
+This is a simple website portofolio created using Next.js.
 
 ## Purpose
 

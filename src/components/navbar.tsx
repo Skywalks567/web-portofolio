@@ -31,7 +31,7 @@ export function Navbar() {
             transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
             className="w-2 h-2 rounded-full bg-[#0f0] shadow-[0_0_8px_#0f0]"
           />
-          root@portfolio:~/
+          root@portofolio:~/
         </span>
         <span className="text-white">
           {pathname === '/' ? 'home' : pathname.replace('/', '')}
