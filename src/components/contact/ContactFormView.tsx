@@ -1,6 +1,5 @@
 import { useContactForm } from '@/hooks/use-contact-form';
 import { AnimatePresence, motion } from 'framer-motion';
-import { FaLock } from 'react-icons/fa';
 import { IoAlertCircle, IoCheckmarkCircle, IoSend } from 'react-icons/io5';
 
 export function ContactFormView() {
@@ -14,16 +13,16 @@ export function ContactFormView() {
   } = useContactForm();
 
   return (
-    <div className="p-8 md:p-12 relative z-10">
-      <div className="flex items-center justify-between mb-12">
-        <h2 className="text-3xl font-bold text-white tracking-tight">
-          Contact Me
-        </h2>
-        <div className="flex items-center gap-2 px-3 py-1 bg-white/5 rounded-full border border-white/10">
-          <FaLock className="text-[#0f0] size-3" />
-          <span className="text-[10px] text-white/40 font-mono uppercase tracking-widest">
-            Secure
-          </span>
+    <div className="p-8 md:p-12 relative z-10 font-mono">
+      <div className="w-full border-b border-[#0f0]/30 pb-4 mb-10 flex items-center justify-between">
+        <div className="flex items-center gap-2">
+          <span className="text-[#0f0] font-bold">root@portofolio:~$</span>
+          <span className="text-white">sendmail</span>
+        </div>
+        <div className="flex gap-1">
+          <div className="w-2 h-2 rounded-full bg-red-500/50" />
+          <div className="w-2 h-2 rounded-full bg-yellow-500/50" />
+          <div className="w-2 h-2 rounded-full bg-green-500/50" />
         </div>
       </div>
 
@@ -36,20 +35,22 @@ export function ContactFormView() {
             exit={{ opacity: 0, scale: 0.95 }}
             className="py-20 flex flex-col items-center text-center space-y-8"
           >
-            <div className="size-24 rounded-full bg-[#0f0]/5 flex items-center justify-center border border-[#0f0]/20 animate-pulse">
-              <IoCheckmarkCircle className="size-12 text-[#0f0]" />
+            <div className="size-20 rounded-sm bg-[#0f0]/5 flex items-center justify-center border border-[#0f0]/20 animate-pulse">
+              <IoCheckmarkCircle className="size-10 text-[#0f0]" />
             </div>
             <div className="space-y-2">
-              <h3 className="text-3xl font-bold text-white">Message Sent</h3>
-              <p className="text-white/40">
-                I will review your message shortly.
+              <h3 className="text-2xl font-bold text-white tracking-tight">
+                [MESSAGE_SENT]
+              </h3>
+              <p className="text-[#0f0]/40 text-sm uppercase tracking-widest">
+                Transmission successful
               </p>
             </div>
             <button
               onClick={resetStatus}
-              className="text-[#0f0] text-sm font-bold hover:text-white transition-colors border-b border-[#0f0]/30 hover:border-white pb-1"
+              className="text-[#0f0] text-xs font-bold hover:text-white transition-colors border-b border-[#0f0]/30 hover:border-white pb-1 tracking-[0.2em]"
             >
-              Send another message?
+              NEW_MESSAGE?
             </button>
           </motion.div>
         ) : (
@@ -64,7 +65,7 @@ export function ContactFormView() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
               <div className="relative group">
                 <label className="absolute -top-6 left-0 text-[10px] font-bold text-[#0f0]/60 uppercase tracking-[0.2em] transition-colors group-focus-within:text-[#0f0]">
-                  Your Name
+                  Sender_Name
                 </label>
                 <input
                   type="text"
@@ -72,13 +73,13 @@ export function ContactFormView() {
                   required
                   value={formData.name}
                   onChange={handleChange}
-                  className="w-full bg-transparent border-b border-white/20 py-2 text-white focus:outline-none focus:border-[#0f0] transition-all duration-300 font-light text-lg placeholder:text-gray-600"
-                  placeholder="John Doe"
+                  className="w-full bg-transparent border-b border-white/20 py-2 text-white focus:outline-none focus:border-[#0f0] transition-all duration-300 text-base placeholder:text-gray-700"
+                  placeholder="Anonymous"
                 />
               </div>
               <div className="relative group">
                 <label className="absolute -top-6 left-0 text-[10px] font-bold text-[#0f0]/60 uppercase tracking-[0.2em] transition-colors group-focus-within:text-[#0f0]">
-                  Email Address
+                  Sender_Email
                 </label>
                 <input
                   type="email"
@@ -86,15 +87,15 @@ export function ContactFormView() {
                   required
                   value={formData.email}
                   onChange={handleChange}
-                  className="w-full bg-transparent border-b border-white/20 py-2 text-white focus:outline-none focus:border-[#0f0] transition-all duration-300 font-light text-lg placeholder:text-gray-600"
-                  placeholder="johndoe@example.com"
+                  className="w-full bg-transparent border-b border-white/20 py-2 text-white focus:outline-none focus:border-[#0f0] transition-all duration-300 text-base placeholder:text-gray-700"
+                  placeholder="user@network.local"
                 />
               </div>
             </div>
 
             <div className="relative group">
               <label className="absolute -top-6 left-0 text-[10px] font-bold text-[#0f0]/60 uppercase tracking-[0.2em] transition-colors group-focus-within:text-[#0f0]">
-                The Message
+                Message_Payload
               </label>
               <textarea
                 name="message"
@@ -102,8 +103,8 @@ export function ContactFormView() {
                 rows={4}
                 value={formData.message}
                 onChange={handleChange}
-                className="w-full bg-white/5 border border-green-900/50 rounded-md px-4 py-3 text-white focus:outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500 transition-all duration-300 font-light text-lg resize-none placeholder:text-gray-600"
-                placeholder="Leave feedback about the site, career opportunities, or just say hi!"
+                className="w-full bg-[#0f0]/5 border border-green-900/50 rounded-sm px-4 py-3 text-white focus:outline-none focus:border-[#0f0]/50 transition-all duration-300 text-base resize-none placeholder:text-gray-700"
+                placeholder="Type your message here..."
               />
             </div>
 
@@ -111,27 +112,32 @@ export function ContactFormView() {
               <motion.div
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="flex items-center gap-2 text-red-500 text-sm bg-red-500/10 p-4 rounded-xl border border-red-500/20"
+                className="flex items-center gap-3 text-red-400 text-xs bg-red-950/20 p-4 rounded-sm border border-red-900/50"
               >
-                <IoAlertCircle className="size-5 shrink-0" />
-                <p>{errorMessage}</p>
+                <IoAlertCircle className="size-4 shrink-0" />
+                <p className="uppercase tracking-widest">
+                  ERROR: {errorMessage}
+                </p>
               </motion.div>
             )}
 
             <button
               type="submit"
               disabled={status === 'sending'}
-              className="w-full py-6 bg-white text-black font-black rounded-2xl flex items-center justify-center gap-4 hover:bg-[#0f0] hover:text-black transition-all duration-500 disabled:opacity-50 disabled:cursor-wait group relative overflow-hidden"
+              className="w-full py-5 border-2 border-[#0f0] text-[#0f0] font-black rounded-sm flex items-center justify-center gap-4 hover:bg-[#0f0] hover:text-black transition-all duration-300 disabled:opacity-50 disabled:cursor-wait group relative overflow-hidden shadow-[0_0_15px_rgba(0,255,0,0.1)]"
             >
               {status === 'sending' ? (
                 <div className="flex items-center gap-3">
-                  <span className="tracking-[0.2em]">SENDING...</span>
-                  <div className="size-4 border-2 border-black border-t-transparent rounded-full animate-spin"></div>
+                  <span className="tracking-[0.3em] uppercase">
+                    [ENCRYPTING...]
+                  </span>
                 </div>
               ) : (
                 <>
-                  <span className="tracking-[0.2em]">SEND MESSAGE</span>
-                  <IoSend className="size-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                  <span className="tracking-[0.3em] uppercase">
+                    SEND_MESSAGE
+                  </span>
+                  <IoSend className="size-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                 </>
               )}
             </button>
