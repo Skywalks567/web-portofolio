@@ -52,10 +52,10 @@ export const recentChronicles = [
   },
   {
     title: 'Backend Developer (Project NutriScale)',
-    period: 'MAR 2026 - APR 2026',
+    period: 'MAR 2026 - PRESENT',
     description:
       'Worked as a Backend Developer on an academic health and nutrition tracking platform. Managed database schema modeling using Prisma ORM with PostgreSQL/MySQL, and implemented WHO-standardized health analysis logic.',
-    active: false,
+    active: true,
   },
   {
     title: 'Cybersecurity & Network Infrastructure Trainee',
