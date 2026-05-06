@@ -1,5 +1,10 @@
-import { animate, useMotionValue, useTransform } from 'framer-motion';
-import { useEffect, useState } from 'react';
+import {
+  AnimationPlaybackControls,
+  animate,
+  useMotionValue,
+  useTransform,
+} from 'framer-motion';
+import { useEffect, useRef, useState } from 'react';
 
 export function useHomeAnimation() {
   const welcomeText = 'WELCOME';
@@ -25,32 +30,42 @@ export function useHomeAnimation() {
   const [isSubDone, setIsSubDone] = useState(false);
   const [dotCount, setDotCount] = useState(0);
 
+  const welcomeControls = useRef<AnimationPlaybackControls | null>(null);
+  const subControls = useRef<AnimationPlaybackControls | null>(null);
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+
   useEffect(() => {
     const interval = setInterval(() => {
       setDotCount((prev) => (prev + 1) % 4);
     }, 500);
-    return () => clearInterval(interval);
+    return () => {
+      clearInterval(interval);
+      if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    };
   }, []);
 
   useEffect(() => {
-    const welcomeControls = animate(welcomeCount, welcomeText.length, {
+    welcomeControls.current = animate(welcomeCount, welcomeText.length, {
       type: 'tween',
       duration: 1.5,
       ease: 'easeInOut',
       onComplete: () => {
         setIsWelcomeDone(true);
-        setTimeout(() => {
+        timeoutRef.current = setTimeout(() => {
           setIsSubStarted(true);
         }, 500);
       },
     });
 
-    return () => welcomeControls.stop();
+    return () => {
+      welcomeControls.current?.stop();
+      if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    };
   }, [welcomeCount, welcomeText.length]);
 
   useEffect(() => {
-    if (isSubStarted) {
-      const subControls = animate(subCount, subText.length, {
+    if (isSubStarted && !isSubDone) {
+      subControls.current = animate(subCount, subText.length, {
         type: 'tween',
         duration: 1.5,
         ease: 'easeInOut',
@@ -58,9 +73,22 @@ export function useHomeAnimation() {
           setIsSubDone(true);
         },
       });
-      return () => subControls.stop();
+      return () => subControls.current?.stop();
     }
-  }, [isSubStarted, subCount, subText.length]);
+  }, [isSubStarted, isSubDone, subCount, subText.length]);
+
+  const skipAnimation = () => {
+    if (isSubDone) return;
+    welcomeControls.current?.stop();
+    subControls.current?.stop();
+    if (timeoutRef.current) clearTimeout(timeoutRef.current);
+
+    welcomeCount.set(welcomeText.length);
+    subCount.set(subText.length);
+    setIsWelcomeDone(true);
+    setIsSubStarted(true);
+    setIsSubDone(true);
+  };
 
   return {
     displayWelcome,
@@ -69,5 +97,6 @@ export function useHomeAnimation() {
     isSubStarted,
     isSubDone,
     dotCount,
+    skipAnimation,
   };
 }

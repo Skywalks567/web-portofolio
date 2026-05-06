@@ -16,7 +16,7 @@ export const projects: Project[] = [
     link: 'https://github.com/Skywalks567/web-portofolio',
   },
   {
-    title: 'Pyfend',
+    title: 'Pyfend (under development)',
     description:
       'A cli tools and library for hash detection and cracking known hash value with smart wordlist generator.',
     tags: ['Python', 'Click', 'Hash Cracking'],
@@ -24,7 +24,7 @@ export const projects: Project[] = [
     link: 'https://github.com/PyFend/PyFend',
   },
   {
-    title: 'NutriScale',
+    title: 'NutriScale (under development)',
     description:
       'A website that can calculate user BMI and suggest what food they should take and directly order them.',
     tags: ['Next.js', 'TypeScript', 'React', 'Python', 'Supabase'],
@@ -32,12 +32,12 @@ export const projects: Project[] = [
     link: 'https://github.com/Kurtz17/NutriScale',
   },
   {
-    title: 'Prim Visualiaation',
+    title: 'Chemlab (under development)',
     description:
-      'A web-based dashboard for graph visualization of prim algorithm. Deploy with Streamlit.',
-    tags: ['Python', 'pandas', 'graphviz', 'Streamlit'],
-    image: '/projects/Prim-Visualization.png',
-    link: 'https://github.com/Skywalks567/PrimVisualization',
+      'A vr based app for chemistry lab. Where the user can mix chemical substances in a virtual environment.',
+    tags: ['C#', 'Unity', 'VR'],
+    image: '/projects/Chemlab.png',
+    link: 'https://github.com/Kurtz17/Chemlab',
   },
   {
     title: 'Color Picker',
@@ -46,6 +46,14 @@ export const projects: Project[] = [
     tags: ['Python', 'Streamlit', 'K-Means'],
     image: '/projects/ColorPicker.png',
     link: 'https://github.com/Skywalks567/ColorPicker',
+  },
+  {
+    title: 'Prim Visualiaation',
+    description:
+      'A web-based dashboard for graph visualization of prim algorithm. Deploy with Streamlit.',
+    tags: ['Python', 'pandas', 'graphviz', 'Streamlit'],
+    image: '/projects/Prim-Visualization.png',
+    link: 'https://github.com/Skywalks567/PrimVisualization',
   },
   {
     title: 'Weather Prediction',

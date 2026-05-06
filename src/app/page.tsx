@@ -13,6 +13,7 @@ export default function Home() {
     isSubStarted,
     isSubDone,
     dotCount,
+    skipAnimation,
   } = useHomeAnimation();
 
   const containerVariants: Variants = {
@@ -49,23 +50,33 @@ export default function Home() {
   };
 
   return (
-    <div className="flex-1 flex flex-col justify-center items-center bg-transparent font-mono px-4 overflow-hidden relative min-h-screen">
+    <div
+      onClick={skipAnimation}
+      className={`flex-1 flex flex-col justify-center items-center bg-transparent font-mono px-4 overflow-hidden relative min-h-screen ${!isSubDone ? 'cursor-pointer' : ''}`}
+    >
       <motion.div
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-        className="w-full max-w-4xl flex flex-col items-center text-center space-y-6 z-10"
+        className="w-full max-w-4xl flex flex-col items-center text-center space-y-6 z-10 pointer-events-none"
       >
-        <HeroSection
-          displayWelcome={displayWelcome}
-          displaySub={displaySub}
-          isWelcomeDone={isWelcomeDone}
-          isSubStarted={isSubStarted}
-          dotCount={dotCount}
-          itemVariants={itemVariants}
-        />
+        <div className="pointer-events-auto">
+          <HeroSection
+            displayWelcome={displayWelcome}
+            displaySub={displaySub}
+            isWelcomeDone={isWelcomeDone}
+            isSubStarted={isSubStarted}
+            dotCount={dotCount}
+            itemVariants={itemVariants}
+          />
+        </div>
 
-        <TerminalSection isSubDone={isSubDone} variants={finalRevealVariants} />
+        <div className="pointer-events-auto w-full">
+          <TerminalSection
+            isSubDone={isSubDone}
+            variants={finalRevealVariants}
+          />
+        </div>
       </motion.div>
     </div>
   );
