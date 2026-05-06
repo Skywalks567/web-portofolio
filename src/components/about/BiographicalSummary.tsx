@@ -15,14 +15,16 @@ export function BiographicalSummary({ variants }: BiographicalSummaryProps) {
           I am a technology enthusiast with a deep focus on{' '}
           <span className="text-[#0f0] font-bold">Cybersecurity</span> and{' '}
           <span className="text-[#0f0] font-bold">Software Development</span>.
-          My journey started with a curiosity about how systems work and how
-          they can be secured against evolving threats.
+          My journey is driven by a strong curiosity about how systems break,
+          how they can be secured, and how code can solve real-world problems.
           <br />
           <br />
           Currently, I spend my time building{' '}
-          <span className="text-white">robust web applications</span> and
-          exploring the intricacies of network security, ethical hacking, and
-          system architecture.
+          <span className="text-white">web applications</span>, diving into the
+          mathematical elegance of{' '}
+          <span className="text-white">cryptography</span>, and exploring the
+          intricacies of network security, ethical hacking, and system
+          architecture.
         </p>
       </div>
     </motion.section>

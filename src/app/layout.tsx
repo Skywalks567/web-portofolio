@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Raymond Situmorang - Cybersecurity Portofolio',
+  title: "Raymond's Portofolio",
   description: 'Cybersecurity Enthusiast and Software Developer Portofolio',
 };
 
