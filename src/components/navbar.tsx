@@ -4,6 +4,8 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
+import { ThemeToggle } from './ThemeToggle';
+
 export function Navbar() {
   const pathname = usePathname();
 
@@ -63,6 +65,7 @@ export function Navbar() {
             </Link>
           );
         })}
+        <ThemeToggle />
       </div>
 
       {/* Mobile Navigation */}

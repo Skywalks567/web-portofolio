@@ -1,0 +1,143 @@
+/* Home Page */
+html.light h1 {
+  color: var(--fg) !important;
+  text-shadow: none !important;
+}
+
+html.light h1 [class*='bg-\[\#0f0\]'] {
+  background-color: var(--cyan) !important;
+}
+
+html.light [class*='text-\[\#0f0\]\/80'] [class*='bg-\[\#0f0\]'],
+html.light [class*='h-\[0.8em\]'][class*='bg-\[\#0f0\]'] {
+  background-color: var(--cyan) !important;
+}
+
+html.light span.mr-3 {
+  color: var(--cyan) !important;
+}
+
+html.light [class*='bg-green-950'] {
+  background-color: #ffffff !important;
+  border: 1px solid rgba(0, 0, 0, 0.12) !important;
+  box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.05) !important;
+}
+
+html.light a[class*='border-gray-600'] {
+  border-color: #000 !important;
+  color: #000 !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  text-shadow: none !important;
+}
+
+html.light a[class*='border-gray-600']:hover {
+  background-color: transparent !important;
+  color: #000 !important;
+  border-color: #000 !important;
+  box-shadow: none !important;
+}
+
+/* About Page */
+html.light .border-t-\[\#0f0\] {
+  border-top-color: var(--cyan) !important;
+}
+
+html.light .border-\[\#0f0\]\/20 {
+  border-color: rgba(var(--cyan-rgb), 0.18) !important;
+}
+
+html.light .border-\[\#0f0\]\/10 {
+  border-color: rgba(var(--cyan-rgb), 0.1) !important;
+}
+
+html.light [class*='hover\:shadow-\[0_0_20px_rgba(0,255,0']:hover,
+html.light [class*='hover\:shadow-\[0_0_30px_rgba(0,255,0']:hover {
+  box-shadow: 4px 4px 0 rgba(var(--cyan-rgb), 0.1) !important;
+}
+
+html.light .glass-card,
+html.light [class*='bg-white\/\[0\.03\]'],
+html.light [class*='bg-\[\#050505\]\/90'] {
+  background-color: #ffffff !important;
+  border-color: rgba(0, 0, 0, 0.1) !important;
+  box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.05) !important;
+}
+
+/* Common Page Background Sync */
+html.light .bg-transparent.p-6.relative.overflow-hidden {
+  background-color: transparent !important;
+}
+
+html.light div[class*='bg-\[\#0f0\]\/10'],
+html.light div[class*='bg-\[\#0f0\]\/5'],
+html.light div[class*='bg-\[radial-gradient'],
+html.light div[class*='blur-\['] {
+  display: none !important;
+}
+
+html.light .absolute.top-0.left-0.w-full.h-full.pointer-events-none,
+html.light
+  .bg-transparent.p-6.relative.overflow-hidden
+  > .absolute:not(.bottom-8) {
+  display: none !important;
+}
+
+/* Contact Page */
+html.light input,
+html.light textarea {
+  color: var(--fg) !important;
+  background-color: transparent !important;
+}
+
+html.light input::placeholder,
+html.light textarea::placeholder {
+  color: #999 !important;
+}
+
+html.light input:focus,
+html.light textarea:focus {
+  border-color: var(--cyan) !important;
+  box-shadow: 0 1px 0 var(--cyan) !important;
+}
+
+html.light .bg-\[\#0f0\]\/5 {
+  background-color: rgba(var(--cyan-rgb), 0.05) !important;
+}
+
+html.light button[type='submit']:hover {
+  color: #fff !important;
+}
+
+html.light .absolute.bottom-8.text-\[10px\] {
+  color: var(--cyan) !important;
+  opacity: 0.8;
+}
+
+html.light .absolute.bottom-8.text-\[10px\] span.bg-\[\#0f0\]\/50 {
+  background-color: var(--cyan) !important;
+}
+
+/* Global Page Elements */
+html.light h1 [class*='text-\[\#0f0\]'],
+html.light h1 span.text-\[\#0f0\],
+html.light .mb-16 h1 span {
+  color: var(--cyan) !important;
+  text-shadow: none !important;
+}
+
+html.light span[class*='bg-\[\#0f0\]'] {
+  background-color: var(--cyan) !important;
+}
+
+html.light label[class*='text-\[\#0f0\]\/60'] {
+  color: var(--muted) !important;
+}
+
+html.light label[class*='group-focus-within\:text-\[\#0f0\]']:focus-within {
+  color: var(--cyan) !important;
+}
+
+html.light canvas.matrix-canvas {
+  opacity: 0.25 !important;
+}

@@ -1,0 +1,26 @@
+html.light {
+  --cyan-rgb: 0, 82, 255;
+  --cyan: rgb(var(--cyan-rgb));
+  --cyan-glow: rgba(var(--cyan-rgb), 0.3);
+  --cyan-dim: rgba(var(--cyan-rgb), 0.12);
+  --bg: #f8f9fa;
+  --fg: #121212;
+  --muted: #4a5568;
+  --grid-line: rgba(var(--cyan-rgb), 0.05);
+}
+
+html.light body {
+  background-color: var(--bg) !important;
+  color: var(--fg) !important;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+html.light body::before {
+  background-image: none !important;
+}
+
+html.light body::after {
+  background: none !important;
+}

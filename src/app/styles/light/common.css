@@ -1,0 +1,72 @@
+html.light *::selection {
+  background-color: rgba(var(--cyan-rgb), 0.18) !important;
+  color: #121212 !important;
+}
+
+html.light * {
+  border-color: rgba(var(--cyan-rgb), 0.08) !important;
+  outline-color: rgba(var(--cyan-rgb), 0.15) !important;
+}
+
+html.light [class*='text-\[\#0f0\]'],
+html.light [class*='text-green-500'] {
+  color: var(--cyan) !important;
+  text-shadow: none !important;
+}
+
+html.light [class*='text-\[\#0f0\]\/'] {
+  color: color-mix(in srgb, var(--cyan) 60%, transparent) !important;
+  text-shadow: none !important;
+}
+
+html.light .text-white {
+  color: var(--fg) !important;
+}
+
+html.light .text-gray-400 {
+  color: #555 !important;
+}
+html.light .text-gray-500 {
+  color: #444 !important;
+}
+html.light .text-gray-600 {
+  color: #333 !important;
+}
+html.light .text-gray-700 {
+  color: #222 !important;
+}
+
+html.light .bg-black,
+html.light [class*='bg-black\/'] {
+  background-color: var(--bg) !important;
+}
+
+html.light [class*='bg-\[\#0f0\]'],
+html.light [class*='bg-green-'] {
+  background-color: rgba(var(--cyan-rgb), 0.05) !important;
+}
+
+html.light [class*='border-\[\#0f0\]'],
+html.light [class*='border-green-'] {
+  border-color: rgba(var(--cyan-rgb), 0.2) !important;
+}
+
+html.light [class*='border-white\/'] {
+  border-color: rgba(0, 0, 0, 0.12) !important;
+}
+
+html.light [class*='border-gray-'] {
+  border-color: rgba(0, 0, 0, 0.18) !important;
+}
+
+html.light [class*='shadow-\[0_0_8px_#0f0\]'] {
+  box-shadow: 1px 1px 0 rgba(var(--cyan-rgb), 0.2) !important;
+}
+
+html.light [class*='shadow-\[0_0_15px_rgba(0,255,0'] {
+  box-shadow: 2px 2px 0 rgba(var(--cyan-rgb), 0.1) !important;
+}
+
+html.light .cyber-glow-text {
+  text-shadow: none !important;
+}

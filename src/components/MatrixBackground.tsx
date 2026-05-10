@@ -1,9 +1,11 @@
 'use client';
 
+import { useTheme } from '@/context/ThemeContext';
 import React, { useEffect, useRef } from 'react';
 
 const MatrixBackground: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const { theme } = useTheme();
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -26,11 +28,16 @@ const MatrixBackground: React.FC = () => {
       drops[i] = Math.random() * -height;
     }
 
+    const isLight = theme === 'light';
+
+    ctx.fillStyle = isLight ? '#F8F9FA' : '#000000';
+    ctx.fillRect(0, 0, width, height);
+
     const draw = () => {
-      ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+      ctx.fillStyle = isLight ? 'rgba(248,249,250,0.18)' : 'rgba(0,0,0,0.05)';
       ctx.fillRect(0, 0, width, height);
 
-      ctx.fillStyle = '#0f0';
+      ctx.fillStyle = isLight ? '#0052FF' : '#0f0';
       ctx.font = `${fontSize}px monospace`;
 
       for (let i = 0; i < drops.length; i++) {
@@ -50,6 +57,9 @@ const MatrixBackground: React.FC = () => {
     const handleResize = () => {
       width = canvas.width = window.innerWidth;
       height = canvas.height = window.innerHeight;
+      ctx.fillStyle = isLight ? '#ffffff' : '#000000';
+      ctx.fillRect(0, 0, width, height);
+
       const newColumns = Math.floor(width / fontSize);
       if (newColumns > drops.length) {
         for (let i = drops.length; i < newColumns; i++) {
@@ -64,12 +74,14 @@ const MatrixBackground: React.FC = () => {
       clearInterval(interval);
       window.removeEventListener('resize', handleResize);
     };
-  }, []);
+  }, [theme]);
 
   return (
     <canvas
       ref={canvasRef}
-      className="fixed inset-0 z-[-1] pointer-events-none opacity-[0.25]"
+      className={`matrix-canvas fixed inset-0 z-[-1] pointer-events-none ${
+        theme === 'light' ? 'opacity-[0.25]' : 'opacity-[0.25]'
+      }`}
       style={{ filter: 'blur(0.5px)' }}
     />
   );

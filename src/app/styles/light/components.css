@@ -1,0 +1,58 @@
+html.light nav {
+  background-color: rgba(248, 249, 250, 0.95) !important;
+  border-color: rgba(0, 0, 0, 0.07) !important;
+}
+
+html.light nav .cyber-glow-text {
+  color: var(--cyan) !important;
+}
+
+html.light nav span[class*='bg-\[\#0f0\]'] {
+  background-color: var(--cyan) !important;
+  box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2) !important;
+}
+
+html.light nav .absolute[class*='bg-\[\#0f0\]'] {
+  background-color: var(--cyan) !important;
+}
+
+html.light nav a:hover span,
+html.light nav a:hover {
+  color: var(--cyan) !important;
+}
+
+html.light .terminal-box {
+  background-color: #ffffff !important;
+  border: 1px solid rgba(0, 0, 0, 0.12) !important;
+  box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.05) !important;
+}
+
+html.light a[class*='border-\[\#0f0\]'],
+html.light button[class*='border-\[\#0f0\]'] {
+  border-color: var(--cyan) !important;
+  color: var(--cyan) !important;
+  background-color: transparent !important;
+  box-shadow: 2px 2px 0 rgba(var(--cyan-rgb), 0.1) !important;
+  text-shadow: none !important;
+}
+
+html.light a[class*='hover\:bg-\[\#0f0\]']:hover,
+html.light button[class*='hover\:bg-\[\#0f0\]']:hover {
+  background-color: var(--cyan) !important;
+  color: #fff !important;
+  box-shadow: 3px 3px 0 rgba(var(--cyan-rgb), 0.2) !important;
+  text-shadow: none !important;
+}
+
+html.light .bg-gray-200.border-gray-400 {
+  background-color: rgba(var(--cyan-rgb), 0.1) !important;
+  border-color: rgba(var(--cyan-rgb), 0.3) !important;
+}
+
+html.light .left-5.bg-black {
+  background-color: var(--cyan) !important;
+}
+
+html.light button.hover\:text-\[\#0f0\]:hover {
+  color: var(--cyan) !important;
+}

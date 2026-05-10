@@ -27,10 +27,17 @@ export function TerminalSection({ isSubDone, variants }: TerminalSectionProps) {
           </div>
         </div>
         <p className="leading-relaxed text-gray-400">
-          I&apos;m <span className="text-white font-bold">Raymond</span>, an
-          Undergraduate Computer Science Student at{' '}
-          <span className="text-[#0f0] font-bold">Universitas Padjadjaran</span>{' '}
-          who passionate about cybersecurity.
+          I&apos;m{' '}
+          <span className="text-white font-bold light-kw">Raymond</span>, an{' '}
+          <span className="light-kw font-bold">
+            Undergraduate Computer Science Student
+          </span>{' '}
+          at{' '}
+          <span className="text-[#0f0] font-bold light-kw">
+            Universitas Padjadjaran
+          </span>{' '}
+          who passionate about{' '}
+          <span className="light-kw font-bold">cybersecurity</span>.
         </p>
       </div>
 
@@ -43,7 +50,7 @@ export function TerminalSection({ isSubDone, variants }: TerminalSectionProps) {
             href="/resume/resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full px-8 py-4 border-2 border-[#0f0] text-[#0f0] hover:bg-[#0f0] hover:text-black transition-all duration-300 text-xs md:text-sm tracking-[0.2em] uppercase font-black flex items-center justify-center gap-2 shadow-[0_0_15px_rgba(0,255,0,0.1)]"
+            className="w-full px-8 py-4 border-2 border-[#0f0] text-[#0f0] hover:bg-[#0f0] hover:text-white transition-all duration-300 text-xs md:text-sm tracking-[0.2em] uppercase font-black flex items-center justify-center gap-2 shadow-[0_0_15px_rgba(0,255,0,0.1)]"
           >
             View_Resume
           </Link>
