@@ -18,8 +18,8 @@ export function ProfileSection({ variants }: ProfileSectionProps) {
           style={{ animationDuration: '3s' }}
         />
         <div
-          className="absolute inset-2 border border-dashed border-[#0f0]/20 rounded-full animate-spin-slow z-20 pointer-events-none"
-          style={{ animationDuration: '12s' }}
+          className="absolute inset-2 border-2 border-t-[#0f0] border-transparent rounded-full animate-spin-slow-reverse z-20 pointer-events-none"
+          style={{ animationDuration: '2s' }}
         />
 
         <div className="relative w-48 h-48 md:w-64 md:h-64 lg:w-72 lg:h-72 rounded-full overflow-hidden border-2 border-[#0f0]/20 z-10">

@@ -64,6 +64,27 @@ html.light [class*='bg-\[\#050505\]\/90'] {
   box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.05) !important;
 }
 
+/* Profile Image & Glow Fixes */
+html.light .grayscale,
+html.light img[class*='grayscale'] {
+  filter: grayscale(100%);
+}
+
+html.light .group:hover img[class*='grayscale'] {
+  filter: grayscale(0%);
+}
+
+html.light .mb-16 .relative.group div[class*='blur'] {
+  display: none !important;
+}
+
+html.light .mb-16 .relative.group .animate-spin,
+html.light .mb-16 .relative.group .animate-spin-slow,
+html.light .mb-16 .relative.group .animate-spin-slow-reverse {
+  border-color: rgba(var(--cyan-rgb), 0.15) !important;
+  border-top-color: var(--cyan) !important;
+}
+
 /* Bullet points and indicators in About sections */
 html.light [class*='bg-\[\#0f0\]'].rounded-full,
 html.light [class*='bg-\[\#0f0\]\/40'].rounded-full {
@@ -92,7 +113,7 @@ html.light .bg-transparent.p-6.relative.overflow-hidden {
 html.light div[class*='bg-\[\#0f0\]\/10'],
 html.light div[class*='bg-\[\#0f0\]\/5'],
 html.light div[class*='bg-\[radial-gradient'],
-html.light div[class*='blur-\['] {
+html.light div[class*='blur'] {
   display: none !important;
 }
 
@@ -100,6 +121,10 @@ html.light .absolute.top-0.left-0.w-full.h-full.pointer-events-none,
 html.light
   .bg-transparent.p-6.relative.overflow-hidden
   > .absolute:not(.bottom-8) {
+  display: none !important;
+}
+
+html.light div[class*='bg-\[\#0f0\]\/5'][class*='blur'] {
   display: none !important;
 }
 
