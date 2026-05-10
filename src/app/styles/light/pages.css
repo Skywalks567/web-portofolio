@@ -113,7 +113,7 @@ html.light .bg-transparent.p-6.relative.overflow-hidden {
 html.light div[class*='bg-\[\#0f0\]\/10'],
 html.light div[class*='bg-\[\#0f0\]\/5'],
 html.light div[class*='bg-\[radial-gradient'],
-html.light div[class*='blur'] {
+html.light div.absolute[class*='blur'] {
   display: none !important;
 }
 
