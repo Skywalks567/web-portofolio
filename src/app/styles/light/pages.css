@@ -64,6 +64,26 @@ html.light [class*='bg-\[\#050505\]\/90'] {
   box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.05) !important;
 }
 
+/* Bullet points and indicators in About sections */
+html.light [class*='bg-\[\#0f0\]'].rounded-full,
+html.light [class*='bg-\[\#0f0\]\/40'].rounded-full {
+  background-color: var(--cyan) !important;
+  opacity: 1 !important;
+}
+
+html.light [class*='bg-\[\#0f0\]\/40'].rounded-full {
+  opacity: 0.4 !important;
+}
+
+html.light [class*='shadow-\[0_0_5px_\#0f0\]'],
+html.light [class*='shadow-\[0_0_8px_\#0f0\]'] {
+  box-shadow: 0 0 6px var(--cyan-glow) !important;
+}
+
+html.light [class*='border-l-4'][class*='border-\[\#0f0\]'] {
+  border-left-color: var(--cyan) !important;
+}
+
 /* Common Page Background Sync */
 html.light .bg-transparent.p-6.relative.overflow-hidden {
   background-color: transparent !important;
