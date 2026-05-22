@@ -19,7 +19,7 @@ export const projects: Project[] = [
       'Cybersecurity',
     ],
     image: '/projects/vulnlabjs.png',
-    link: 'https://github.com/Skywalks567/vulnlabjs',
+    link: 'https://github.com/Skywalks567/Vulnlabjs',
   },
   {
     title: 'Pyfend (under development)',
