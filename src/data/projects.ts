@@ -8,12 +8,18 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    title: 'Portofolio Website',
+    title: 'VulnlabJS (under development)',
     description:
-      'My portofolio website. Built with Next.js, TypeScript, Tailwind, and Framer Motion.',
-    tags: ['Next.js', 'TypeScript', 'React'],
-    image: '/projects/Web-Portofolio.png',
-    link: 'https://github.com/Skywalks567/web-portofolio',
+      'An interactive web security laboratory for learning OWASP Top 10 vulnerabilities',
+    tags: [
+      'Next.js',
+      'TypeScript',
+      'Supabase',
+      'OWASP Top 10',
+      'Cybersecurity',
+    ],
+    image: '/projects/vulnlabjs.png',
+    link: 'https://github.com/Skywalks567/vulnlabjs',
   },
   {
     title: 'Pyfend (under development)',
@@ -38,6 +44,14 @@ export const projects: Project[] = [
     tags: ['C#', 'Unity', 'VR'],
     image: '/projects/Chemlab.png',
     link: 'https://github.com/Kurtz17/Chemlab',
+  },
+  {
+    title: 'Portofolio Website',
+    description:
+      'My portofolio website. Built with Next.js, TypeScript, Tailwind, and Framer Motion.',
+    tags: ['Next.js', 'TypeScript', 'React'],
+    image: '/projects/Web-Portofolio.png',
+    link: 'https://github.com/Skywalks567/web-portofolio',
   },
   {
     title: 'Color Picker',
