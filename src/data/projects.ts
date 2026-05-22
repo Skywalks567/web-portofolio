@@ -18,8 +18,8 @@ export const projects: Project[] = [
       'OWASP Top 10',
       'Cybersecurity',
     ],
-    image: '/projects/vulnlabjs.png',
-    link: 'https://github.com/Skywalks567/Vulnlabjs',
+    image: '/projects/Vulnlabjs.png',
+    link: 'https://github.com/Skywalks567/vulnlabjs',
   },
   {
     title: 'Pyfend (under development)',
