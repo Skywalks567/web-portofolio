@@ -1,8 +1,8 @@
 'use client';
 
 import { BiographicalSummary } from '@/components/about/BiographicalSummary';
+import { GithubContributions } from '@/components/about/GithubContributions';
 import { ProfileSection } from '@/components/about/ProfileSection';
-import { RecentChronicles } from '@/components/about/RecentChronicles';
 import { TechnicalArsenal } from '@/components/about/TechnicalArsenal';
 import { Variants, motion } from 'framer-motion';
 
@@ -67,7 +67,7 @@ export default function AboutPage() {
         <div className="w-full space-y-12">
           <BiographicalSummary variants={itemVariants} />
           <TechnicalArsenal variants={itemVariants} />
-          <RecentChronicles variants={itemVariants} />
+          <GithubContributions variants={itemVariants} />
         </div>
       </motion.div>
     </div>
