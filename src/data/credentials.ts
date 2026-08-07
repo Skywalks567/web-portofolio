@@ -38,7 +38,7 @@ export const experiences: Experience[] = [
     id: 'exp-2',
     title: 'Junior Cybersecurity Engineer Intern - PT VINIX SEVEN AURUM',
     period: 'AUG 2025 - DEC 2025',
-    logo: '/credentials/experience/Vinix7-logo.jpeg',
+    logo: '/credentials/experience/Vinix7-Logo.jpeg',
     summary:
       'Managed SIEM monitoring, executed vulnerability assessments, and secured virtual environments through custom PKI and disaster recovery strategies.',
     points: [
