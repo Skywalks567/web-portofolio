@@ -36,7 +36,9 @@ export default function RootLayout({
         <ThemeProvider>
           <MatrixBackground />
           <Navbar />
-          <main className="flex-1 flex flex-col relative z-10">{children}</main>
+          <main className="flex-1 flex flex-col relative z-10 pt-24 md:pt-0">
+            {children}
+          </main>
           <footer className="relative z-10 text-center py-4 text-xs font-mono opacity-50 text-gray-500">
             Raymond Situmorang &copy; 2026
           </footer>

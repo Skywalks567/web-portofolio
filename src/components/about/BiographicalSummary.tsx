@@ -14,9 +14,9 @@ export function BiographicalSummary({ variants }: BiographicalSummaryProps) {
         <p className="leading-relaxed text-sm md:text-base lg:text-lg text-gray-400 group-hover:text-gray-300 transition-colors">
           I am a technology enthusiast with a deep focus on{' '}
           <span className="text-[#0f0] font-bold">Cybersecurity</span> and{' '}
-          <span className="text-[#0f0] font-bold">Software Development</span>.
-          My journey is driven by a strong curiosity about how systems break,
-          how they can be secured, and how code can solve real-world problems.
+          <span className="text-[#0f0] font-bold">Backend Development</span>. My
+          journey is driven by a strong curiosity about how systems break, how
+          they can be secured, and how code can solve real-world problems.
           <br />
           <br />
           Currently, I spend my time building{' '}

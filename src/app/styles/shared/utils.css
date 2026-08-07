@@ -27,3 +27,11 @@
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
+
+.terminal-divider {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+html.light .terminal-divider {
+  background-color: rgba(0, 0, 0, 1) !important;
+}

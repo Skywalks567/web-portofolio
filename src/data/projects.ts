@@ -30,7 +30,7 @@ export const projects: Project[] = [
     link: 'https://github.com/PyFend/PyFend',
   },
   {
-    title: 'NutriScale (under development)',
+    title: 'NutriScale',
     description:
       'A website that can calculate user BMI and suggest what food they should take and directly order them.',
     tags: ['Next.js', 'TypeScript', 'React', 'Python', 'Supabase'],
@@ -38,7 +38,7 @@ export const projects: Project[] = [
     link: 'https://github.com/Kurtz17/NutriScale',
   },
   {
-    title: 'Chemlab (under development)',
+    title: 'Chemlab',
     description:
       'A vr based app for chemistry lab. Where the user can mix chemical substances in a virtual environment.',
     tags: ['C#', 'Unity', 'VR'],

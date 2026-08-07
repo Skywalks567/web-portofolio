@@ -8,14 +8,14 @@ import { ActivityItemCard } from './ActivityItemCard';
 interface ActivityTimelineProps {
   activities: ActivityItem[];
   loading: boolean;
-  isUsingFallback: boolean;
+  hasError: boolean;
   mounted: boolean;
 }
 
 export function ActivityTimeline({
   activities,
   loading,
-  isUsingFallback,
+  hasError,
   mounted,
 }: ActivityTimelineProps) {
   const [expanded, setExpanded] = useState(false);
@@ -45,7 +45,7 @@ export function ActivityTimeline({
     <div className="space-y-6">
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
         <div className="flex items-center gap-2">
-          <span className="text-xs text-[#0f0] bg-[#0f0]/10 px-2 py-1 rounded font-mono uppercase tracking-wider">
+          <span className="text-xs text-[#fff] bg-[#0f0]/10 px-2 py-1 rounded font-mono uppercase tracking-wider">
             Logs
           </span>
           <h3 className="text-lg font-bold uppercase tracking-wider font-mono text-white">
@@ -56,8 +56,8 @@ export function ActivityTimeline({
           <span className="text-[10px] text-[#0f0]/40 font-mono">
             {loading
               ? 'SYNCING_WITH_GITHUB...'
-              : isUsingFallback
-                ? 'MODE: LOCAL_FALLBACK'
+              : hasError
+                ? 'MODE: SYNC_FAILED'
                 : 'MODE: REAL_TIME_SYNCED'}
           </span>
         )}
@@ -65,16 +65,16 @@ export function ActivityTimeline({
 
       {/* Two-column layout: left gutter (line) + right content (badge + items) */}
       <div className="flex w-full font-mono min-h-[150px]">
-        {/* LEFT GUTTER — fixed w-8, contains the vertical line through center */}
+        {/* LEFT GUTTER */}
         <div className="relative w-8 shrink-0">
           <div className="absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-px bg-white/10" />
         </div>
 
-        {/* RIGHT CONTENT — starts at same x as the LOGS badge above */}
+        {/* RIGHT CONTENT */}
         <div className="flex-grow space-y-8">
-          {/* Month badge — left edge aligned with LOGS; line is centered in the gutter to its left */}
+          {/* Month badge */}
           <div className="mb-4 relative -top-1 -ml-8">
-            <span className="text-xs text-[#0f0] bg-black px-3 py-1 rounded border border-[#0f0]/30 shadow-[0_0_8px_rgba(0,255,0,0.15)] font-mono whitespace-nowrap inline-block">
+            <span className="text-xs text-[#0f0] bg-black px-3 py-1 rounded border border-[#0f0]/30 shadow-[0_0_8px_rgba(0,0,0,0,0)] font-mono whitespace-nowrap inline-block">
               {dateObj.month} {dateObj.year}
             </span>
           </div>
@@ -87,6 +87,19 @@ export function ActivityTimeline({
                   <div className="h-3 bg-white/5 rounded w-1/2 border border-white/5" />
                 </div>
               ))}
+            </div>
+          ) : activities.length === 0 ? (
+            <div className="py-8 pl-4 flex items-center gap-3">
+              <span
+                className={`w-2 h-2 rounded-full ${hasError ? 'bg-red-500' : 'bg-gray-500'} animate-pulse`}
+              />
+              <p
+                className={`text-sm font-mono ${hasError ? 'text-red-400' : 'text-gray-400'}`}
+              >
+                {hasError
+                  ? '[ERROR]: Failed to sync with GitHub API.'
+                  : '[SYSTEM_MSG]: Raymond has no activity yet for this period.'}
+              </p>
             </div>
           ) : (
             visibleActivities.map((act) => (

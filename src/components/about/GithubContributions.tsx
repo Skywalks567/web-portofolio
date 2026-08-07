@@ -1,6 +1,7 @@
 'use client';
 
-import { ActivityItem, fallbackActivities } from '@/data/github';
+import { useTheme } from '@/context/ThemeContext';
+import { ActivityItem } from '@/data/github';
 import { Variants, motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import { GitHubCalendar } from 'react-github-calendar';
@@ -12,13 +13,16 @@ interface GithubContributionsProps {
 }
 
 export function GithubContributions({ variants }: GithubContributionsProps) {
+  const { theme } = useTheme();
+  const isLight = theme === 'light';
+
   const [mounted, setMounted] = useState(false);
   const [activities, setActivities] = useState<ActivityItem[]>([]);
   const [totalContributions, setTotalContributions] = useState<number | null>(
     null,
   );
   const [loading, setLoading] = useState(true);
-  const [isUsingFallback, setIsUsingFallback] = useState(false);
+  const [hasError, setHasError] = useState(false);
 
   useEffect(() => {
     // eslint-disable-next-line react-hooks/set-state-in-effect
@@ -34,18 +38,15 @@ export function GithubContributions({ variants }: GithubContributionsProps) {
         setTotalContributions(data.totalContributions || null);
         if (data.activities && data.activities.length > 0) {
           setActivities(data.activities);
-          setIsUsingFallback(false);
+          setHasError(false);
         } else {
-          setActivities(fallbackActivities);
-          setIsUsingFallback(true);
+          setActivities([]);
+          setHasError(false);
         }
       } catch (error) {
-        console.warn(
-          'Failed to fetch real-time GitHub activity, falling back to static logs:',
-          error,
-        );
-        setActivities(fallbackActivities);
-        setIsUsingFallback(true);
+        console.warn('Failed to fetch real-time GitHub activity:', error);
+        setActivities([]);
+        setHasError(true);
       } finally {
         setLoading(false);
       }
@@ -54,13 +55,20 @@ export function GithubContributions({ variants }: GithubContributionsProps) {
     fetchActivities();
   }, []);
 
-  const cyberpunkTheme = {
+  const customTheme = {
     dark: [
       'rgba(255, 255, 255, 0.05)',
       'rgba(0, 255, 0, 0.2)',
       'rgba(0, 255, 0, 0.45)',
       'rgba(0, 255, 0, 0.7)',
       'rgba(0, 255, 0, 0.95)',
+    ],
+    light: [
+      'rgba(0, 0, 0, 0.05)',
+      'rgba(0, 82, 255, 0.3)',
+      'rgba(0, 82, 255, 0.55)',
+      'rgba(0, 82, 255, 0.8)',
+      'rgba(0, 82, 255, 1.0)',
     ],
   };
 
@@ -81,8 +89,8 @@ export function GithubContributions({ variants }: GithubContributionsProps) {
               <div className="min-w-[750px] md:min-w-0 md:w-full flex justify-center text-white scale-[0.95] sm:scale-100 origin-center transition-all duration-300">
                 <GitHubCalendar
                   username="Skywalks567"
-                  colorScheme="dark"
-                  theme={cyberpunkTheme}
+                  colorScheme={isLight ? 'light' : 'dark'}
+                  theme={customTheme}
                   labels={{
                     totalCount: '{{count}} contributions in the last year',
                   }}
@@ -104,7 +112,7 @@ export function GithubContributions({ variants }: GithubContributionsProps) {
       <ActivityTimeline
         activities={activities}
         loading={loading}
-        isUsingFallback={isUsingFallback}
+        hasError={hasError}
         mounted={mounted}
       />
     </motion.section>

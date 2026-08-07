@@ -56,7 +56,7 @@ export default function ProjectsPage() {
               className="w-2.5 h-6 bg-[#0f0]"
             />
           </div>
-          <div className="w-full h-[1px] bg-white/10" />
+          <div className="w-full h-[1px] terminal-divider" />
         </motion.div>
 
         {/* Projects Grid */}
