@@ -28,6 +28,7 @@ export function ProfileSection({ variants }: ProfileSectionProps) {
             alt="Profile"
             fill
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            priority
             className="object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
           />
         </div>

@@ -1,12 +1,10 @@
 'use client';
 
-import { BiographicalSummary } from '@/components/about/BiographicalSummary';
-import { GithubContributions } from '@/components/about/GithubContributions';
-import { ProfileSection } from '@/components/about/ProfileSection';
-import { TechnicalArsenal } from '@/components/about/TechnicalArsenal';
+import { CredentialsTabs } from '@/components/credentials/CredentialsTabs';
+import { certificates, experiences } from '@/data/credentials';
 import { Variants, motion } from 'framer-motion';
 
-export default function AboutPage() {
+export default function CredentialsPage() {
   const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
@@ -39,13 +37,13 @@ export default function AboutPage() {
         className="max-w-5xl mx-auto relative z-10 flex flex-col items-start"
       >
         {/* Terminal Header */}
-        <motion.div variants={itemVariants} className="mb-16 w-full space-y-6">
+        <motion.div variants={itemVariants} className="mb-12 w-full space-y-6">
           <div className="flex items-center gap-3 pt-8">
             <span className="text-xl md:text-2xl text-white font-medium">
               $
             </span>
             <h1 className="text-xl md:text-2xl font-normal">
-              <span className="text-[#0f0]">cat</span> about.me
+              <span className="text-[#0f0]">cat</span> credentials.json
             </h1>
             <motion.span
               animate={{ opacity: [1, 1, 0, 0] }}
@@ -58,17 +56,20 @@ export default function AboutPage() {
             />
           </div>
           <div className="w-full h-[1px] terminal-divider" />
+          <p className="text-gray-400 text-sm md:text-base leading-relaxed max-w-3xl">
+            A log of my professional journey, including practical experiences
+            and validated certifications in the field of Cybersecurity and
+            Software Development.
+          </p>
         </motion.div>
 
-        {/* Profile Image & Status */}
-        <ProfileSection variants={itemVariants} />
-
-        {/* Content Sections */}
-        <div className="w-full space-y-12">
-          <BiographicalSummary variants={itemVariants} />
-          <TechnicalArsenal variants={itemVariants} />
-          <GithubContributions variants={itemVariants} />
-        </div>
+        {/* Interactive Tabs Section */}
+        <motion.div variants={itemVariants} className="w-full">
+          <CredentialsTabs
+            experiences={experiences}
+            certificates={certificates}
+          />
+        </motion.div>
       </motion.div>
     </div>
   );

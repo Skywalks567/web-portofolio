@@ -25,7 +25,7 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="min-h-screen bg-transparent font-mono text-white flex items-center justify-center p-6 md:p-12 lg:p-24 relative overflow-hidden selection:bg-[#0f0] selection:text-black">
+    <div className="min-h-[calc(100vh-6rem)] md:min-h-screen bg-transparent font-mono text-white flex items-start md:items-center justify-center p-6 pt-12 md:p-12 lg:p-24 relative overflow-hidden selection:bg-[#0f0] selection:text-black">
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
         <div className="absolute top-[10%] right-[10%] w-[40%] h-[40%] bg-[#0f0]/10 rounded-full blur-[150px] animate-pulse"></div>
         <div className="absolute bottom-[10%] left-[10%] w-[40%] h-[40%] bg-[#0f0]/5 rounded-full blur-[150px]"></div>
@@ -36,11 +36,11 @@ export default function ContactPage() {
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-        className="max-w-7xl w-full grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-32 items-center relative z-10"
+        className="max-w-7xl w-full flex flex-col lg:grid lg:grid-cols-2 gap-8 lg:gap-32 lg:items-center relative z-10"
       >
         {/* Left Column: Text & Social */}
-        <div className="space-y-12 text-center lg:text-left">
-          <div className="space-y-8">
+        <div className="space-y-8 lg:space-y-12 text-center lg:text-left order-1 lg:order-1">
+          <div className="space-y-4 lg:space-y-8">
             <div className="space-y-2">
               <motion.p
                 variants={itemVariants}
@@ -66,17 +66,29 @@ export default function ContactPage() {
             </motion.p>
           </div>
 
-          <motion.div variants={itemVariants}>
+          {/* Social Links for Desktop */}
+          <motion.div variants={itemVariants} className="hidden lg:block">
             <SocialLinks />
           </motion.div>
         </div>
 
         {/* Right Column: Contact Form */}
-        <motion.div variants={itemVariants} className="relative">
+        <motion.div
+          variants={itemVariants}
+          className="relative order-2 lg:order-2"
+        >
           <div className="absolute -inset-0.5 bg-[#0f0]/20 rounded-sm blur opacity-20"></div>
           <div className="relative bg-[#050505]/90 backdrop-blur-xl border border-green-900/50 rounded-sm shadow-2xl overflow-hidden">
             <ContactFormView />
           </div>
+        </motion.div>
+
+        {/* Social Links for Mobile */}
+        <motion.div
+          variants={itemVariants}
+          className="lg:hidden w-full order-3"
+        >
+          <SocialLinks />
         </motion.div>
       </motion.div>
 

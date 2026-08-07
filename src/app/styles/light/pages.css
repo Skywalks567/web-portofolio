@@ -186,3 +186,40 @@ html.light label[class*='group-focus-within\:text-\[\#0f0\]']:focus-within {
 html.light canvas.matrix-canvas {
   opacity: 0.25 !important;
 }
+
+/* Credentials Page */
+
+html.light button[class*='hover\:bg-\[\#0f0\]'].px-6:hover {
+  background-color: rgba(var(--cyan-rgb), 0.05) !important;
+  color: var(--cyan) !important;
+  box-shadow: none !important;
+}
+
+html.light button[class*='bg-\[\#0f0\]\/10'].px-6 {
+  background-color: var(--cyan) !important;
+  color: #fff !important;
+  box-shadow: 3px 3px 0 rgba(var(--cyan-rgb), 0.2) !important;
+}
+
+html.light .group:hover > div[class*='group-hover\:bg-\[rgba(0'] {
+  background-color: rgba(var(--cyan-rgb), 0.05) !important;
+  border-color: rgba(var(--cyan-rgb), 0.3) !important;
+}
+
+html.light span.bg-blue-500\/30 {
+  background-color: rgba(var(--cyan-rgb), 0.1) !important;
+  color: var(--cyan) !important;
+}
+
+html.light .glass-card .p-3.rounded-lg {
+  background-color: rgba(var(--cyan-rgb), 0.1) !important;
+  color: var(--cyan) !important;
+}
+html.light .glass-card:hover {
+  border-color: rgba(var(--cyan-rgb), 0.4) !important;
+  box-shadow: 0 0 20px rgba(var(--cyan-rgb), 0.1) !important;
+}
+html.light .glass-card:hover span[class*='group-hover\:text-'],
+html.light .glass-card:hover svg[class*='group-hover\:text-'] {
+  color: var(--cyan) !important;
+}

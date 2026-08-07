@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import { FaGithub, FaInstagram, FaLinkedin } from 'react-icons/fa';
 
 export function SocialLinks() {
   return (
@@ -22,6 +22,16 @@ export function SocialLinks() {
       >
         <FaLinkedin className="size-5 group-hover:scale-110 transition-transform" />
         <span className="text-xs uppercase tracking-[0.2em]">LinkedIn</span>
+      </Link>
+
+      <Link
+        href="https://www.instagram.com/raymondfrans_"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex items-center gap-3 px-6 py-3 border border-[#0f0]/30 rounded-sm text-[#0f0]/80 bg-[#0f0]/5 hover:bg-[#0f0] hover:text-black hover:shadow-[0_0_15px_rgba(0,255,0,0.2)] transition-all duration-300 font-bold group"
+      >
+        <FaInstagram className="size-5 group-hover:scale-110 transition-transform" />
+        <span className="text-xs uppercase tracking-[0.2em]">Instagram</span>
       </Link>
     </div>
   );
